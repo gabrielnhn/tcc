@@ -1,0 +1,198 @@
+% Versão 24/06/2020
+
+% Este documento destina-se a servir como modelo para a produção de documentos
+% de pesquisa do PPGINF/UFPR, como projetos, dissertações e teses. A classe de
+% documento se chama "ppginf" (arquivo ppginf.cls) e define o formato básico do
+% documento. O texto está organizado em capítulos que são colocados em
+% subdiretórios separados. São definidos exemplos para a inclusão de figuras,
+% códigos-fonte e a definição de tabelas.
+%
+% Produzido por Carlos Maziero (maziero@inf.ufpr.br).
+
+%=====================================================
+
+% Opções da classe ppginf:
+%
+% - defesa    : versão para entregar à banca; tem espaçamento 1,5
+%               e omite algumas páginas iniciais (agradecimentos, etc)
+% - final     : versão pós-defesa, para enviar à biblioteca;
+%               tem espaçamento simples e todas as páginas iniciais.
+% - oneside   : somente frente; use quando for gerar somente o PDF.
+% - twoside   : frente/verso; use se precisar de uma versão impressa.
+% - metadados : inclui metadados no PDF (por default não inclui)
+% - ...       : demais opções aceitas pela classe "book"
+
+% ATENÇÂO: este modelo tem suporte para português e inglês.
+% As duas línguas devem ser informadas como opção da classe;
+% a língua principal do documento deve vir POR ÚLTIMO.
+
+% Versão de defesa em português
+%\documentclass[defesa,oneside,english,brazilian]{ppginf}
+
+% Versão de defesa em inglês
+\documentclass[defesa,oneside,brazilian,english]{ppginf}
+% Versão final em inglês
+%\documentclass[final,oneside,brazilian,english]{ppginf}
+
+
+% Versão final em PDF para a biblioteca da UFPR (português e inglês)
+%\documentclass[final,oneside,english,brazilian]{ppginf}
+%\documentclass[final,oneside,brazilian,english]{ppginf}
+
+% Versão final para impressão (frente/verso)
+%\documentclass[final,twoside,english,brazilian]{ppginf}
+
+% configurações de diversos pacotes, inclusive a fonte usada no texto
+\include{packages}
+
+%=====================================================
+
+\begin {document}
+
+% Principais dados, usados para gerar as páginas iniciais.
+% Campos não utilizados podem ser removidos ou comentados.
+
+% título
+\title{Untitled work}
+
+% palavras-chave e keywords (p/ resumo, abstract e metadados do PDF)
+%\pchave{Palavra-chave 1. Palavra-chave 2. Palavra-chave 3.}
+\keyword{Gaze Estimation. Computer Vision. Image Processing.}
+
+% autoria
+\author{Gabriel Nascarella Hishida do Nascimento}
+\advisor{Prof. Eduardo Todt}
+
+% instituição
+\IfLanguageName{brazilian}
+  { \instit{UFPR}{Universidade Federal do Paraná} }
+% a Bib/UFPR exige que tudo seja em português, exceto o título :-(
+%  { \instit{UFPR}{Federal University of Paraná} }
+  { \instit{UFPR}{Universidade Federal do Paraná} }
+
+% área de concentração (default do PPGInf, não mudar)
+\IfLanguageName{brazilian}
+  { \field{Ciência da Computação} }
+% a Bib/UFPR exige que tudo seja em português, exceto o título :-(
+%  { \field{Computer Science} }
+  { \field{Ciência da Computação} }
+
+% data (só o ano)
+\date{2022}
+
+% local
+\IfLanguageName{brazilian}
+  { \local{Curitiba PR} }
+% a Bib/UFPR exige que tudo seja em português, exceto o título :-(
+%  { \local{Curitiba PR - Brazil} }
+  { \local{Curitiba PR} }
+
+% imagem de fundo da capa (se não desejar, basta comentar)
+\coverimage{0-iniciais/fundo-capa.jpg}
+
+%=====================================================
+
+%% Descrição do documento (obviamente, descomentar somente UMA!)
+
+% Por exigência da biblioteca da UFPR, a descrição do documento deve ser
+% em português, mesmo em documentos em outras línguas. Vá entender...
+
+% tese de doutorado
+%\descr{Tese apresentada como requisito parcial à obtenção do grau de Doutor em Ciência da Computação no Programa de Pós-Graduação em Informática, Setor de Ciências Exatas, da Universidade Federal do Paraná}
+
+% exame de qualificação de doutorado
+%\descr{Documento apresentado como requisito parcial ao exame de qualificação de Doutorado no Programa de Pós-Graduação em Informática, Setor de Ciências Exatas, da Universidade Federal do Paraná}
+
+% dissertação de mestrado
+%\descr{Dissertação apresentada como requisito parcial à obtenção do grau de Mestre em Informática no Programa de Pós-Graduação em Informática, Setor de Ciências Exatas, da Universidade Federal do Paraná}
+
+% exame de qualificação de mestrado
+%\descr{Documento apresentado como requisito parcial ao exame de qualificação de Mestrado no Programa de Pós-Graduação em Informática, Setor de Ciências Exatas, da Universidade Federal do Paraná}
+
+% trabalho de conclusão de curso
+\descr{Trabalho apresentado como requisito parcial à conclusão do Curso de Bacharelado em Ciência da Computação, Setor de Ciências Exatas, da Universidade Federal do Paraná}
+
+% trabalho de disciplina
+%\descr{Trabalho apresentado como requisito parcial à conclusão da disciplina XYZ no Curso de Bacharelado em XYZ, Setor de Ciências Exatas, da Universidade Federal do Paraná}
+
+% doctorate thesis
+%\descr{Thesis presented as a partial requirement for the degree of Doctor in Computer Science in the Graduate Program in Informatics, Exact Sciences Sector, of the Federal University of Paraná, Brazil}
+
+% doctorate qualification
+%\descr{Document presented as a partial requirement for the doctoral qualification exam in the Graduate Program in Informatics, Exact Sciences Sector, of the Federal University of Paraná, Brazil}
+
+% MSc dissertation
+%\descr{Dissertation presented as a partial requirement for the degree of Master of Sciences in Informatics in the Graduate Program in Informatics, Exact Sciences Sector, of the Federal University of Paraná, Brazil.}
+
+% MSc qualification
+%\descr{Document presented as a partial requirement for the Master of Sciences qualification exam in the Graduate Program in Informatics, Exact Sciences Sector, of the Federal University of Paraná, Brazil}
+
+%=====================================================
+
+% define estilo das páginas iniciais (capas, resumo, sumário, etc)
+\frontmatter
+\pagestyle{frontmatter}
+
+% produz capa e folha de rosto
+\titlepage
+
+% páginas que só aparecem na versão final (a inclusão é automática)
+\include{0-iniciais/catalografica}	% ficha catalográfica
+\include{0-iniciais/aprovacao}		% folha de aprovação
+\include{0-iniciais/dedica}		% dedicatória
+\include{0-iniciais/agradece}		% agradecimentos
+
+% resumo (português) e abstract (inglês)
+%\include{0-iniciais/resumo}
+\include{0-iniciais/abstract}
+
+% listas  de figuras, tabelas, abreviações/siglas, símbolos
+%\listoffigures				% figuras
+%\clearpage
+%\listoftables				% tabelas
+%\include{0-iniciais/acronimos}		% acrônimos, deve ser preenchida à mão
+%\include{0-iniciais/simbolos}		% símbolos, idem
+\tableofcontents			% sumário
+
+%=====================================================
+
+% define estilo do corpo do documento (capítulos e apêndices)
+\mainmatter
+\pagestyle{mainmatter}
+
+% inclusao de cada capítulo, alterar a gosto (do professor de Metodologia)
+\include{1-intro/texto}			% introdução
+% \include{2-fundam/texto}		% fundamentação teórica
+%\include{3-arte/texto}			% estado da arte
+%\include{4-proposta/texto}		% proposta
+%\include{5-valida/texto}		% experimentação e validação
+%\include{6-conclusao/texto}		% conclusão
+
+%=====================================================
+
+% o estilo de bibliografia é definido no arquivo packages.tex
+
+% ATENÇÃO: evite usar \cite{}; prefira \citep{} e \citet{}
+
+% base de bibliografia (BibTeX)
+
+\bibliography{referencias}
+\nocite{*}
+%\bibliography{file1,file2,file3} % se tiver mais de um arquivo BibTeX
+
+%=====================================================
+
+% inclusão de apêndices
+% \appendix
+
+% inclusão de apêndice
+% \include{a1-exemplo/texto}
+
+% inclusão de apêndice
+% \include{a2-exemplo/texto}
+
+%=====================================================
+
+\end{document}
+
+%=====================================================
