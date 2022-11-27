@@ -1,8 +1,14 @@
 \chapter{Introduction}
 
-We reached a point in computer vision research where there are already so many resources --- such as state-of-the-art artificial intelligence models or image processing algorithms --- that finding use for the tools we have can be as important as coming up with more of them.
+With upcoming research, gaze estimation is becoming more affordable each passing day, as image-based eye tracking techniques are more accessible than infrared devices. We reached a point in computer vision-based eye tracking research where artificial intelligence models -- such as Gaze360 -- can analyze image data such as head pose and eyeball orientation in order to estimate where humans are looking -- even in unconstrained environments \cite{gaze360_2019}. 
 
-It's known that eye-tracking can be quite useful for machines, in order to obtain data used to train AI models for object-reference or decision-making tasks, learn to recognize the context of an image, and can be used by robots to better understand social cues when interacting with humans \cite{ijcai2020-689}; for instance, intelligent tutoring systems can automatically detect when students are mind-wandering \cite{Hutt2016TheEH}.
+Eye-tracking data can be quite useful for machines. It can be used to train AI models for object-reference or decision-making tasks; used to learn to recognize the context of an image, or even to better understand social cues when interacting with humans \cite{ijcai2020-689}. Current models can also understand abstract concepts such as analysing art paintings by looking where art specialists set their eyes \cite{Massaro2012-jx}.
 
-But gaze estimation can also be used by humans themselves to better comprehend abstract and complex subjects, like analysing art paintings \cite{Massaro2012-jx}. 
+Intelligent tutoring systems can also automatically detect when students are mind-wandering too, by using gaze features and contextual features such as the teaching subject, the student's score and time spent on each lesson \cite{Hutt2016TheEH}. A similar concept was also applied when monitoring drivers' attention, in an "All in one Network", by using information like head pose, gaze direction, yawning and eye state analysis such as blink rate, blink duration and eye open/close \cite{9053659}.
 
+% ---
+% The goal of this paper is to use a novel 3D gaze estimation model, Gaze360 \cite{gaze360_2019}, to extract data on drivers' attention and behaviour on the FDUDrivers Dataset, a dataset containing footage of more than 100 different drivers \cite{9053659}.
+
+% The goal of this paper is to use a novel 3D gaze estimation model, Gaze360 \cite{gaze360_2019}, to extract data on drivers' attention and behaviour on the SynDD1, a dataset containing footage of 10 different drivers from 3 different camera angles, performing various activities \cite{https://doi.org/10.48550/arxiv.2204.08096}.
+
+The goal of this paper is to use a novel 3D gaze estimation model, L2CS-Net \cite{https://doi.org/10.48550/arxiv.2203.03339}, to extract data on drivers' attention and behaviour on driving footage from the DMD - Driver Monitoring Dataset, a dataset made from more than 35 different drivers, from 3 different camera angles with more than 40 hours of real-life driving \cite{jOrtega2020}.
